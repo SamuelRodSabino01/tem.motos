@@ -1,0 +1,22 @@
+.bg-blue{
+    background-color: #004aab;
+}
+.btn-blue{
+    background-color: #004aab;
+    color: #fff;
+}
+.btn-blue:hover{
+    background-color: #0050d7;
+    color: #fff;
+}
+.account-pages{
+    display: flex;
+    height: 100vh;
+}
+.formulario{
+    display: flex;
+    height: 100vh;
+}
+.conteudo{
+    align-content: center;
+}

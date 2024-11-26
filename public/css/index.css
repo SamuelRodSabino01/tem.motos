@@ -1,0 +1,24 @@
+.vertical-menu, .navbar-brand-box{
+    background-color: #00436e !important;
+}
+.btn-azul{
+    background-color: #00a9ff;
+    width: 100%;
+    margin-bottom: 3%;
+    color: #fff;
+}
+.btn-azul:hover{
+    background-color: #0087df;
+    color: #fff;
+}
+.btn-outline-secondary{
+    border-color: #00a9ff !important;
+    color: #00a9ff !important;
+}
+.btn-outline-secondary:hover{
+    background-color: #00a9ff !important;
+    color: white !important;
+}
+.btn-outline-secondary:active{
+    background-color: #00a9ff !important;
+}
