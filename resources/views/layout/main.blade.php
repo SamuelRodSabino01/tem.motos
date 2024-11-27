@@ -51,7 +51,7 @@
 
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo">
+                            <a href="/" class="logo">
                                 <span class="logo-sm">
                                     <img src="{{asset('images/logo-branca.png')}}" alt="" height="15">
                                 </span>
@@ -92,35 +92,35 @@
                             <li class="menu-title text-white text-center">Menu</li>
                             <li>
                                 <button class="btn btn-azul">
-                                    <a href="cadastro-clientes.html" class="text-white">
+                                    <a href="clientes" class="text-white">
                                         <span>Cadastro de Clientes</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="cadastro-pecas.html" class="text-white">
+                                    <a href="pecas" class="text-white">
                                         <span>Cadastro de Peças</span>
                                     </a>
                                 </button>  
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="cadastro-servicos.html" class="text-white">
+                                    <a href="servicos" class="text-white">
                                         <span>Cadastro de Serviços</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="cadastro-pedidos.html" class="text-white">
+                                    <a href="pedidos" class="text-white">
                                         <span>Cadastrar Pedidos</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="404.html" class="text-white">
+                                    <a href="relatorios" class="text-white">
                                         <span>Emitir Relatórios</span>
                                     </a>
                                 </button>
