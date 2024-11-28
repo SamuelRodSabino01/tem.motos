@@ -16,7 +16,7 @@ return new class extends Migration
                 $table->string('name');
                 $table->integer('price');
                 $table->integer('spendingTime');
-                $table->integer('description');
+                $table->string('description');
             $table->timestamps();
         });
     }

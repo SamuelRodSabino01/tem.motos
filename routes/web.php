@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\PartController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,8 @@ Route::get('/', function () {
 
 Route::get('/clientes', [ClientController::class, 'index'])->name('clients.index');
 Route::get('/pecas', [PartController::class, 'index'])->name('parts.index');
+Route::get('/servicos', [ServiceController::class, 'index'])->name('services.index');
 
-Route::get('/servicos', function () {
-    return view('servicos');
-});
 
 Route::get('/pedidos', function () {
     return view('pedidos');
