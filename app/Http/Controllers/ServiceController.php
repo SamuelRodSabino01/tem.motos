@@ -11,6 +11,6 @@ class ServiceController extends Controller
     {
         $servicos = Service::all();
 
-        return view('servicos', compact('servicos'));
+        return view('servicos.index', compact('servicos'));
     }
 }

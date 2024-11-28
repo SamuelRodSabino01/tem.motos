@@ -11,6 +11,6 @@ class PartController extends Controller
     {
         $pecas = Part::with('supplier')->get();
 
-        return view('pecas', compact('pecas'));
+        return view('pecas.index', compact('pecas'));
     }
 }

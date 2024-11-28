@@ -92,35 +92,35 @@
                             <li class="menu-title text-white text-center">Menu</li>
                             <li>
                                 <button class="btn btn-azul">
-                                    <a href="clientes" class="text-white">
+                                    <a href="{{ route('clientes.index') }}" class="text-white">
                                         <span>Cadastro de Clientes</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="pecas" class="text-white">
+                                    <a href="{{ route('pecas.index') }}" class="text-white">
                                         <span>Cadastro de Peças</span>
                                     </a>
                                 </button>  
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="servicos" class="text-white">
+                                    <a href="{{ route('servicos.index') }}" class="text-white">
                                         <span>Cadastro de Serviços</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="pedidos" class="text-white">
+                                    <a href="{{ route('pedidos.index') }}" class="text-white">
                                         <span>Cadastrar Pedidos</span>
                                     </a>
                                 </button>
                             </li>
                             <li>
                                 <button class="btn btn-azul waves-effect">
-                                    <a href="relatorios" class="text-white">
+                                    <a href="{{ route('relatorios.index') }}" class="text-white">
                                         <span>Emitir Relatórios</span>
                                     </a>
                                 </button>

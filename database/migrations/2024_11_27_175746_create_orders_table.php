@@ -22,14 +22,14 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('order_services', function (Blueprint $table) {
+        Schema::create('order_service', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Order::class)->constrained();
             $table->foreignIdFor(Service::class)->constrained();
             $table->integer('quantity');
         });
 
-        Schema::create('order_parts', function (Blueprint $table) {
+        Schema::create('order_part', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Order::class)->constrained();
             $table->foreignIdFor(Part::class)->constrained();

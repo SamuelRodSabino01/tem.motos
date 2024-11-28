@@ -1,23 +1,18 @@
 @extends('layout.main')
 @section('title', 'Clientes')
 @section('content')
-    
-    <x-clientes.cadastro-cliente></x-clientes.cadastro-cliente>
-    
+        
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Lista de Clientes</h4>
+                <h4 class="card-title">Lista de Fornecedores</h4>
                 <p class="card-title-desc">Editar informações</p>
                 <div class="table-responsive">
                     <table id="datatable-buttons" class="table table-editable table-nowrap align-middle table-edits">
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>CPF</th>
                                 <th>Telefone</th>
-                                <th>Email</th>
-                                <th>Endereço</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
@@ -25,10 +20,7 @@
                             @foreach ($clientes as $cliente)
                                 <tr>
                                     <td>{{ $cliente->name }}</td>
-                                    <td>{{ $cliente->cpf }}</td>
                                     <td>{{ $cliente->phone }}</td>
-                                    <td>{{ $cliente->email }}</td>
-                                    <td>{{ $cliente->address }}, {{ $cliente->number }} - {{ $cliente->neighborhood }} - {{ $cliente->zipCode }}</td>
                                     <td style="width: 100px">
                                         <a class="btn btn-outline-secondary btn-sm" title="Edit">
                                             <i class="fas fa-pencil-alt"></i>
