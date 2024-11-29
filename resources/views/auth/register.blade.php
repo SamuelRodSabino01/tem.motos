@@ -64,8 +64,12 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <form class="form-horizontal mt-3" method="POST" action="{{ route('login.post') }}">
+                                    <form class="form-horizontal mt-3" method="POST" action="{{ route('register.post') }}">
                                         @csrf
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Nome</label>
+                                            <input type="text" class="form-control" id="name" type="name" name="name" placeholder="Name">
+                                        </div>
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Email</label>
                                             <input type="text" class="form-control" id="email" type="email" name="email" placeholder="Email">
@@ -75,7 +79,7 @@
                                             <label class="form-label">Senha</label>
                                             <div class="input-group auth-pass-inputgroup">
                                                 <input type="password" class="form-control" placeholder="Senha" aria-label="Password" id="password" name="password" aria-describedby="password-addon">
-                                                <button class="btn btn-light " type="button" type="password" ><i class="mdi mdi-eye-outline"></i></button>
+                                                <button class="btn btn-light " type="button" type="password"><i class="mdi mdi-eye-outline"></i></button>
                                             </div>
                                         </div>
                                         
@@ -84,7 +88,7 @@
                                         </div>
 
                                         <div class="mt-4 text-center">
-                                            <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-lock me-1"></i>Registrar</a>
+                                            <a href="#" class="text-muted"><i class="mdi mdi-lock me-1"></i>Esqueceu sua senha?</a>
                                         </div>
                                     </form>
                                 </div>
