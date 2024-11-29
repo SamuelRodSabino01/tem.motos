@@ -26,6 +26,22 @@
                             </select>
                         </div>
 
+                        <div class="col-md-6">
+                            <label class="col-form-label">Status</label>
+                            <select class="form-control" name="status">
+                                <option value="">Selecione o status</option>
+                                <option value="pending" {{ (isset($order) && $order->status == 'pending') ? 'selected' : '' }}>
+                                    Pendente
+                                </option>
+                                <option value="completed" {{ (isset($order) && $order->status == 'completed') ? 'selected' : '' }}>
+                                    Concluido
+                                </option>
+                                <option value="canceled" {{ (isset($order) && $order->status == 'canceled') ? 'selected' : '' }}>
+                                    Cancelado
+                                </option>
+                            </select>
+                        </div>
+
                         <!-- Serviços -->
                         <div class="col-md-12 mt-3">
                             <label class="col-form-label">Serviços</label>

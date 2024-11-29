@@ -64,6 +64,7 @@ class OrderController extends Controller
         // Validação do formulário
         $validated = $request->validate([
             'client_id' => 'required|exists:clients,id',
+            'status' => 'required|in:pending,completed,canceled',
             'parts' => 'nullable|array',
             'parts.*.id' => 'exists:parts,id',
             'parts.*.quantity' => 'required|integer|min:1',
@@ -75,6 +76,7 @@ class OrderController extends Controller
         // Criar pedido
         $order = Order::create([
             'client_id' => $validated['client_id'],
+            'status' => $validated['status'],
         ]);
 
         // Anexar as peças ao pedido
@@ -118,6 +120,7 @@ class OrderController extends Controller
         // Validação do formulário
         $validated = $request->validate([
             'client_id' => 'required|exists:clients,id',
+            'status' => 'required|in:pending,completed,canceled',
             'parts' => 'nullable|array',
             'parts.*.id' => 'exists:parts,id',
             'parts.*.quantity' => 'required|integer|min:1',
@@ -129,6 +132,7 @@ class OrderController extends Controller
         // Atualizar o pedido
         $pedido->update([
             'client_id' => $validated['client_id'],
+            'status' => $validated['status'],
         ]);
 
         // Atualizar as peças do pedido
