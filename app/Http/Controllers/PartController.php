@@ -22,15 +22,17 @@ class PartController extends Controller
 
     public function store(Request $request)
     {
-        Part::create($request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'code' => 'required|string|unique:parts,code',
+            'code' => 'required|string',
             'costPrice' => 'required|numeric|min:0',
             'sellingPrice' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'description' => 'nullable|string',
             'supplier_id' => 'required|exists:suppliers,id',
-        ]));
+        ]);
+    
+        Part::create($validatedData);
 
         return redirect()->route('pecas.index')->with('success', 'Peça criada com sucesso!');
     }
@@ -45,22 +47,24 @@ class PartController extends Controller
     {
         $data = Part::findOrFail($id);
         $suppliers = Supplier::all();
+
         return view('pecas.form', compact('data', 'suppliers'));
     }
 
     public function update(Request $request, $id)
     {
-        $peca = Part::findOrFail($id);
-
-        $peca->update($request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|string|max:255',
-            'code' => 'required|string|unique:parts,code,' . $id, // Exclui o atual do check de unicidade
+            'code' => 'required|string',
             'costPrice' => 'required|numeric|min:0',
             'sellingPrice' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'description' => 'nullable|string',
             'supplier_id' => 'required|exists:suppliers,id',
-        ]));
+        ]);
+
+        $peca = Part::findOrFail($id);
+        $peca->update($validatedData);
 
         return redirect()->route('pecas.index')->with('success', 'Peça atualizada com sucesso!');
     }

@@ -17,24 +17,24 @@ class OrderController extends Controller
         $pedidos = $pedidos->map(function ($order) {
             $partsDetails = $order->part->map(function ($part) {
                 $quantity = $part->pivot->quantity;
-                $price = $part->sellingPrice / 100;
+                $price = $part->sellingPrice;
                 $totalPrice = $price * $quantity;
 
                 return "{$part->name} x{$quantity}: R$" . number_format($totalPrice, 2, ',', '.');
-            })->join(', <br> ');
+            })->join('; <br> ');
 
             $servicesDetails = $order->service->map(function ($service) {
                 $quantity = $service->pivot->quantity;
-                $price = $service->price / 100;
+                $price = $service->price;
                 $totalPrice = $price * $quantity;
 
                 return "{$service->name} x{$quantity}: R$" . number_format($totalPrice, 2, ',', '.');
-            })->join(', <br> ');
+            })->join('; <br> ');
 
             $total = $order->part->sum(function ($part) {
-                return ($part->sellingPrice / 100) * $part->pivot->quantity;
+                return ($part->sellingPrice) * $part->pivot->quantity;
             }) + $order->service->sum(function ($service) {
-                return ($service->price / 100) * $service->pivot->quantity;
+                return ($service->price) * $service->pivot->quantity;
             });
 
             return [

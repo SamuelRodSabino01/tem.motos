@@ -33,7 +33,7 @@
                             @foreach ($servicos as $servico)
                                 <tr>
                                     <td>{{ $servico->name }}</td>
-                                    <td>R$ {{ number_format($servico->price / 100, 2, ',', '.') }}</td>
+                                    <td>R$ {{ number_format($servico->price, 2, ',', '.') }}</td>
                                     <td>{{ $servico->spendingTime }}</td>
                                     <td>{{ $servico->description }}</td>
                                     <td style="width: 100px">

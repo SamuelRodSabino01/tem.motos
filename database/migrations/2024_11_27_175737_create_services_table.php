@@ -17,6 +17,7 @@ return new class extends Migration
                 $table->integer('price');
                 $table->integer('spendingTime');
                 $table->string('description');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

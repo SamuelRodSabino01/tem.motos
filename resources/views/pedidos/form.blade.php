@@ -73,7 +73,7 @@
                                                         <option value="">Selecione a peça</option>
                                                         @foreach ($parts as $p)
                                                             <option value="{{ $p->id }}" {{ $part->id == $p->id ? 'selected' : '' }}>
-                                                                {{ $p->name }} - R$ {{ number_format($p->sellingPrice / 100, 2, ',', '.') }}
+                                                                {{ $p->name }} - R$ {{ number_format($p->sellingPrice, 2, ',', '.') }}
                                                             </option>
                                                         @endforeach
                                                     </select>
@@ -148,7 +148,7 @@
                                 <select class="form-control" name="parts[${partIndex}][id]" required>
                                     <option value="">Selecione a peça</option>
                                     @foreach ($parts as $part)
-                                        <option value="{{ $part->id }}">{{ $part->name }} - R$ {{ number_format($part->sellingPrice / 100, 2, ',', '.') }}</option>
+                                        <option value="{{ $part->id }}">{{ $part->name }} - R$ {{ number_format($part->sellingPrice, 2, ',', '.') }}</option>
                                     @endforeach
                                 </select>
                             </div>

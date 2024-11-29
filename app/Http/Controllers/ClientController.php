@@ -30,9 +30,14 @@ class ClientController extends Controller
     public function store(Request $request)
     {
         Client::create($request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
+            'name' => 'required|string|max:255',
+            'cpf' => 'nullable|string',
+            'phone' => 'required|string|max:15',
+            'email' => 'required|email|max:255',
+            'zipCode' => 'nullable|string|max:10',
+            'address' => 'nullable|string|max:255',
+            'number' => 'nullable|string|max:10',
+            'neighborhood' => 'nullable|string|max:255',
         ]));
 
         return redirect()->route('clientes.index');
@@ -43,9 +48,14 @@ class ClientController extends Controller
     {
         $cliente = Client::findOrFail($id);
         $cliente->update($request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
+            'name' => 'required|string|max:255',
+            'cpf' => 'nullable|string',
+            'phone' => 'required|string|max:15',
+            'email' => 'required|email|max:255',
+            'zipCode' => 'nullable|string|max:10',
+            'address' => 'nullable|string|max:255',
+            'number' => 'nullable|string|max:10',
+            'neighborhood' => 'nullable|string|max:255',
         ]));
 
         return redirect()->route('clientes.index')->with('success', 'Atualizado com sucesso!');

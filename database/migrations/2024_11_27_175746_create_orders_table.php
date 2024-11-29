@@ -19,23 +19,27 @@ return new class extends Migration
             $table->id();
                 $table->foreignIdFor(Client::class)->constrained();
                 $table->enum('status', ['pending', 'completed', 'canceled'])->default('pending');
+            $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::create('order_service', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Order::class)->constrained();
-            $table->foreignIdFor(Service::class)->constrained();
+            $table->foreignIdFor(Order::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Service::class)->constrained()->onDelete('cascade');
             $table->integer('quantity');
+            $table->softDeletes();
         });
 
         Schema::create('order_part', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Order::class)->constrained();
-            $table->foreignIdFor(Part::class)->constrained();
+            $table->foreignIdFor(Order::class)->constrained()->onDelete('cascade');
+            $table->foreignIdFor(Part::class)->constrained()->onDelete('cascade');
             $table->integer('quantity');
+            $table->softDeletes();
         });
     }
+    
 
     /**
      * Reverse the migrations.

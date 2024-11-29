@@ -21,6 +21,7 @@ return new class extends Migration
                 $table->string('stock');
                 $table->string('description');
                 $table->foreignIdFor(Supplier::class)->constrained();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

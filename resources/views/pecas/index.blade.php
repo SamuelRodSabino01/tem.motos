@@ -37,8 +37,8 @@
                                 <tr>
                                     <td>{{ $peca->code }}</td>
                                     <td>{{ $peca->name }}</td>
-                                    <td>R$ {{ number_format($peca->costPrice / 100, 2, ',', '.') }}</td>
-                                    <td>R$ {{ number_format($peca->sellingPrice / 100, 2, ',', '.') }}</td>
+                                    <td>R$ {{ number_format($peca->costPrice, 2, ',', '.') }}</td>
+                                    <td>R$ {{ number_format($peca->sellingPrice, 2, ',', '.') }}</td>
                                     <td>{{ $peca->stock }}</td>
                                     <td>{{ $peca->description }}</td>
                                     <td>{{ $peca->supplier->name }}</td>
