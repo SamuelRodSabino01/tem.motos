@@ -235,5 +235,7 @@
         <!-- Máscaras de entrada -->
         <script src="{{asset('js/mascara-cpf.js')}}"></script>
         <script src="{{asset('js/mascara-wpp.js')}}"></script>
+
+        @yield('scripts')
     </body>
 </html>

@@ -42,9 +42,19 @@
                                         <a class="btn btn-outline-secondary btn-sm" title="Edit" href="{{ route('clientes.edit', $cliente->id) }}">
                                             <i class="fas fa-pencil-alt"></i>
                                         </a>
-                                        <a class="btn btn-outline-danger btn-sm" title="Delete" href="{{ route('clientes.destroy', $cliente->id) }}">
+                                        <a class="btn btn-outline-danger btn-sm" title="Delete" onclick="if(confirm('Tem certeza que deseja excluir este cliente?')) {
+                                            event.preventDefault(); 
+                                            document.getElementById('delete-client-{{ $cliente->id }}').submit();
+                                        }">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
+                                        <form id="delete-client-{{ $cliente->id }}" 
+                                            action="{{ route('clientes.destroy', $cliente->id) }}" 
+                                            method="POST" 
+                                            style="display: none;">
+                                          @csrf
+                                          @method('DELETE')
+                                      </form>
                                     </td>
                                 </tr>
                             @endforeach
